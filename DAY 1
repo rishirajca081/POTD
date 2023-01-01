@@ -1,0 +1,21 @@
+/*Given an array of integers, your task is to find the smallest and second smallest element in
+the array. If smallest and second smallest do not exist, print -1.
+QUESTION NUMBER 1.) */
+
+class Compute 
+{
+    public long[] minAnd2ndMin(long a[], long n)  
+    {
+        Arrays.sort(a);
+        long arr[]={-1,-1};
+        for(int i=1;i<a.length;i++){
+            long temp=a[0];
+            if(a[i]>temp){
+                arr[0]=temp;
+                arr[1]=a[i];
+                break;
+            }
+        }
+        return arr;
+    }
+    }
