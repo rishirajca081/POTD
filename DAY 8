@@ -1,0 +1,60 @@
+TASK 1.)
+Given an array arr[] of N positive integers. Push all the zeros of the given array to the right 
+end of the array while maitaining the order of non-zero elements.
+
+
+Example 1:
+
+Input:
+N = 5
+Arr[] = {3, 5, 0, 0, 4}
+Output: 3 5 4 0 0
+Explanation: The non-zero elements
+preserve their order while the 0
+elements are moved to the right.
+
+class Solution {
+    void pushZerosToEnd(int[] arr, int n) {
+        // code here
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]!=0){
+                arr[count]=arr[i];
+                count++;
+            }
+        }
+        while(count<n){
+            arr[count]=0;
+            count++;
+        }
+    }
+}
+
+TASK 2.)
+Given a sorted array A[] of N positive integers having all the numbers occurring exactly twice, except for one number which will occur only once. Find the number occurring only once.
+
+Example 1:
+
+Input:
+N = 5
+A = {1, 1, 2, 5, 5}
+Output: 2
+Explanation: 
+Since 2 occurs once, while
+other numbers occur twice, 
+2 is the answer.
+
+class Sol
+{
+    public static int search(int A[], int N)
+    {
+        // your code here
+        int i;
+        for(i=0;i<A.length-1;i+=2){
+            if(A[i]!=A[i+1]){
+                return A[i];
+            }
+        }
+        return A[i];
+    }
+}
